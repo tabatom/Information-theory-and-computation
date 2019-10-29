@@ -1,0 +1,12 @@
+echo "" > my_res.txt
+echo "NO OPTIMIZATION" >> my_res.txt
+./Ex3.exe >> my_res.txt
+echo "" >> my_res.txt
+echo "OPTIMIZATION: 1" >> my_res.txt
+./Ex3_O1.exe >> my_res.txt
+echo "" >> my_res.txt
+echo "OPTIMIZATION: 2" >> my_res.txt
+./Ex3_O2.exe >> my_res.txt
+echo "" >> my_res.txt
+echo "OPTIMIZATION: 3" >> my_res.txt
+./Ex3_O3.exe >> my_res.txt

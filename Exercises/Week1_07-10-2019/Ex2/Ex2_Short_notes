@@ -1,0 +1,11 @@
+
+	For what concerns Ex2_a, after writing the first version of the program, the compiler
+		can recognize that there is an "out of range" error and it does not compile.
+
+	Newer versions suggest this:
+	Error: Arithmetic overflow converting INTEGER(4) to INTEGER(2) at (1). This check can
+		be disabled with the option ‘-fno-range-check’
+
+	Using that flag the program runs but (obviously) gives the wrong result.
+
+	Using INT*4 the compiler gives no errors.

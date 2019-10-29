@@ -1,0 +1,5 @@
+gfortran Ex3.f -o Ex3.exe
+gfortran Ex3.f -O1 -o Ex3_O1.exe
+gfortran Ex3.f -O2 -o Ex3_O2.exe
+gfortran Ex3.f -O3 -o Ex3_O3.exe
+gfortran Ex3.f -Ofast -o Ex3_Ofast.exe

@@ -1,0 +1,32 @@
+
+NO OPTIMIZATION
+ Manual process took:
+  0.40696599999999999     
+ Transposed manual process took:
+  0.31800599999999996     
+ Function process took:
+   9.8059999999999814E-003
+
+OPTIMIZATION: 1
+ Manual process took:
+  0.13200500000000001     
+ Transposed manual process took:
+  0.12727200000000000     
+ Function process took:
+   1.0146999999999989E-002
+
+OPTIMIZATION: 2
+ Manual process took:
+  0.13240600000000000     
+ Transposed manual process took:
+  0.12967200000000001     
+ Function process took:
+   9.8919999999999841E-003
+
+OPTIMIZATION: 3
+ Manual process took:
+   6.6667999999999991E-002
+ Transposed manual process took:
+  0.12914100000000001     
+ Function process took:
+   1.0264999999999996E-002

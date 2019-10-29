@@ -1,0 +1,62 @@
+\documentclass[11pt, a4paper]{report}
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage[caption = false]{subfig}
+
+\usepackage[margin=1.5cm]{geometry}
+\usepackage[font={small,it}]{caption}
+
+
+\begin{document}
+
+\begin{titlepage}
+
+\begin{center}
+\LARGE{Università degli Studi di Padova}\\
+\line(1,0){450}\\
+\begin{figure}[H]
+\centering
+
+\end{figure}
+\vspace{-0.2em}
+\Large{Dipartimento di Fisica e Astronomia ‘‘Galileo Galilei’’}\\
+\vspace{2em}
+\Large{Corso di Laurea in Physics of Data}\\
+\vspace{8em}
+\Huge{\textsc{\textbf{Quantum information and computation: week 1 exercises}}}\\
+\vspace{2em}
+\LARGE{\textsc{of}}\\
+\vspace{1em}
+\huge{\textsc{Tommaso Tabarelli}}\\
+\vspace{11em}
+\LARGE{Anno accademico 2019-2020}\\
+\line(1,0){450}
+\end{center}
+
+\end{titlepage}
+
+
+
+
+\section*{Exercise 1}
+The first exercise is a program that write in terminal "Hello world".
+
+\section*{Exercise 2}
+In the second exercise, after writing the first version of the program using 2 bytes to represent integers (int*2), the compiler can recognize that there is an "out of range" error due to the numbers used and it does not compile. Newer compiler versions suggest the following:
+\textit{Error: Arithmetic overflow converting INTEGER(4) to INTEGER(2) at (1). This check can be disabled with the option ‘-fno-range-check’}.\\
+Using that flag the compiler act without warnings but the executable program gives a \textit{nosense} result (as expected).\\ \\
+In the version that uses 4 bytes to represent integers (int*4) there are no problems (with the used numbers).
+
+\section*{Exercise 3}
+
+
+
+\end{document}
