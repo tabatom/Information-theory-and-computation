@@ -1,0 +1,3 @@
+gfortran Ex5_Tommaso_Tabarelli_CODE1.f90 Debug.f90 RNG.f90 Sort.f90 -llapack -o Ex5_Tommaso_Tabarelli_CODE1.exe -Wunused-variable
+gfortran Ex5_Tommaso_Tabarelli_CODE2.f90 Debug.f90 RNG.f90 Sort.f90 -llapack -o Ex5_Tommaso_Tabarelli_CODE2.exe -Wunused-variable
+source .clear_debug

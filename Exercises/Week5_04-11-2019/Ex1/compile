@@ -1,0 +1,2 @@
+gfortran Ex5_Tommaso_Tabarelli_CODE1.f90 Debug.f90 RNG.f90 Sort.f90 -llapack -o Ex5_Tommaso_Tabarelli_CODE1.exe
+source .clear_debug

@@ -1,0 +1,2 @@
+gfortran Ex4_Tommaso_Tabarelli_CODE.f -o Ex4_Tommaso_Tabarelli_CODE.exe
+source .clear_debug

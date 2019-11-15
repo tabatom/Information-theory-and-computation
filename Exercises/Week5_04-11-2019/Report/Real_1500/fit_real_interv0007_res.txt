@@ -1,0 +1,6 @@
+# fit P(x) filename u 1:2 via a, alpha, b, beta
+# final sum of squares of residuals : 0.00478898
+a               = 0.744448055733161     
+alpha           = -0.0373580688058628   
+b               = 0.62053045119367      
+beta            = 1.30651612718266      

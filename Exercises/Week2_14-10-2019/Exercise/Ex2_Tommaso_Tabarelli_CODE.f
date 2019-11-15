@@ -207,7 +207,6 @@
 	END MODULE MATRICES
 
 
-
 	! Starting program
 	PROGRAM Ex2_MATRICES
 		USE MATRICES

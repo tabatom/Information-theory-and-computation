@@ -1,0 +1,23 @@
+
+	To launch python script:
+	
+		:~/$ python Ex5_Tabarelli_Tommaso_CODE2.py DIMENSION TIMES
+	
+	where DIMENSIONS represent the (square) matrix dimensions, while TIMES represents
+	the number of generated matices.
+	
+	To compile fortran files:
+	
+		sh compile
+	
+	(don not mind "rm" errors)
+	
+	To run single executable:
+	
+		sh run1
+	or
+		sh run2
+	
+	To run both:
+	
+		sh run
