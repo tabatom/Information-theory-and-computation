@@ -1,4 +1,4 @@
-	PROGRAM Ex5
+	PROGRAM Ex6
 	! Program that study random hermitian matrices
 	! Variables are:
 	! Hamilt	:	hamiltonian matrix
@@ -7,6 +7,7 @@
 	! dims	:	= k_split+1, is the matrix dimension.
 	! h_spac	:	= 2L_interv/k_split ---> it is the width of the interval used to discretize
 	! x_pos	:	the positions in which calculous are done (x_i = -L + i*(2*L/k))
+	! eig_fun_eval :	the evaluation of the theoretical eigenfunctions on the interval points
 	! info_eig	:	is an output variable to be used in eigenvalues subroutine; if info_eig==0,
 	!				then eigenvalues are stored in ev_exp in ascending order
 	! ev_exp	:	vector of calculated eigenvalues of Hamiltonian matrix
@@ -20,6 +21,9 @@
 	! mass	:	mass of the quantistic particle
 	! omega	:	=sqrt(k/mass), where k is the elastic constant (not considered in this program).
 	!				omega is the classic frequence of the oscillation
+	! eigf_const:	the constant to be evaluated for each eigenfunction
+	! pi_		:	is the constant "greek pie" ~ 3.1415...
+	! fact_const:	is the factorial normalizing value: different for every eigenfunction
 
 	USE DEBUG
 	USE HERMITE
@@ -58,9 +62,11 @@
 	! Opening file to read interval split
 	OPEN(11, file="k_split.txt", status='old', action='READ')
 	! Reading number of intervals from file
-	READ(11,"(I4)") k_split
+	READ(11,*) k_split
 	! Closing file
 	CLOSE(11)
+	
+	
 	
 	! Getting intervals width
 	h_spac = 2.0*L_interv/k_split
@@ -172,16 +178,21 @@
 	! Evaluating first 10 eigenfunctions
 	! Pi = 2*arcsin(1)
 	pi_ = 2*ASIN(1d0)
-	eigf_const = (mass*omega/h_bar)**(0.5)
-	
+	eigf_const = (mass*omega/(h_bar))**(0.5)
+		
 	DO ii=1,10
-		fact_const = FLOAT(Factorial(ii))
-		eig_fun_eval(:,ii) = 1./SQRT(fact_const*(2**ii))*eigf_const*evalHerm_Poly(x_pos, (ii-1))*EXP(-0.5*(eigf_const*x_pos)**2)
+		fact_const = FLOAT(Factorial(ii-1))
+		eig_fun_eval(:,ii) = (eigf_const/SQRT(pi_))**0.5/SQRT(fact_const*(2**(ii-1)))
+		eig_fun_eval(:,ii) = eig_fun_eval(:,ii)*evalHerm_Poly((eigf_const*x_pos), (ii-1))*EXP(-0.5*(eigf_const*x_pos)**2)
 	END DO
-
-
-	! SCALING APPROXIMATED EIGENVECTORS
-	!  AS THE INTEGRAL OF THE EIGENFUNCTIONS WERE NORMALIZED
+	
+	! Making the last sample from the half of the eigenvectors (not working...)
+	!ii = INT((dims-1)/2)
+	!fact_const = FLOAT(Factorial(ii-1))
+	!eig_fun_eval(:,10) = (eigf_const/SQRT(pi_))**0.5/SQRT(fact_const*(2**(ii-1)))
+	!eig_fun_eval(:,10) = eig_fun_eval(:,10)*evalHerm_Poly((eigf_const*x_pos), (ii-1))*EXP(-0.5*(eigf_const*x_pos)**2)
+	
+	! Scaling eigenvectors so that eigenfunctions are normalized
 	Hamilt = Hamilt/SQRT(h_spac)
 
 
@@ -190,19 +201,19 @@
 	! Opening and REWRITING existing file
 	
 	! Writing theoretical eigenvalues
-	OPEN(11, file="ev_theor.txt", status='REPLACE', action='WRITE')
+	OPEN(11, file="eval_theo.txt", status='REPLACE', action='WRITE')
 	
 	DO ii=1, dims
-		WRITE(11,"(F10.5)") ev_theor(ii)
+		WRITE(11,"(F15.5)") ev_theor(ii)
 	END DO
 	
 	CLOSE(11)
 	
 	! Writing approximated eigenvalues
-	OPEN(12, file="ev_exp.txt", status='REPLACE', action='WRITE')
+	OPEN(12, file="eval_exp.txt", status='REPLACE', action='WRITE')
 	
 	DO ii=1,dims
-		WRITE(12,"(F10.5)") ev_exp(ii)
+		WRITE(12,"(F15.5)") ev_exp(ii)
 	END DO
 	
 	CLOSE(12)
@@ -239,10 +250,10 @@
 	
 	! Deallocating rises errors
 	DEALLOCATE(Hamilt)
-	!DEALLOCATE(ev_theor)
+	DEALLOCATE(ev_theor)
 	DEALLOCATE(ev_exp)
 	DEALLOCATE(WORK_)
 	DEALLOCATE(wk_opt)
 	STOP
 	
-	END PROGRAM Ex5
+	END PROGRAM Ex6

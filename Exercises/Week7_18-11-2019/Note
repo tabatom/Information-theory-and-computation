@@ -1,0 +1,6 @@
+
+	Use dfftw_plan_dft_1d(plan,...)
+	
+	We can call it to initialize "plan" variable only at beginning and then we can use that without re-initialize it.
+	
+	N.B.: the goal is to see the oscillation behaviour when the speed is too large.
