@@ -10,14 +10,15 @@ set xrange[-5:5]
 
 set xtics (-4,-3,-2,-1,0,1,2,3,4)
 set grid
-set title 'Time evolution of eigenfunction n=0' font ",20"  
+set title 'Time evolution of eigenfunction n=0' font ",30" offset 0,-1
 set key right top
 set key font ",20"
-set xtics font ", 17"
-set ytics font ", 17"
+set xtics font "10,25"
+set ytics font "10,30"
 
 
 set cbrange [0:100]
-set cblabel "Time steps"
+set cblabel "Time steps" font ",30"
+set cbtics font ",20"
 #plot for [i=1:100] 'temp_evolut_mod.txt' using 1:(column(i+1)) w l lw 3 lt palette frac 1.0*i/100.0 title ""
 plot for [i=1:25] 'temp_evolut_mod.txt' using 1:(column(4*i+1)) w l lw 3 lt palette frac 1.0*4*i/100.0 title ""

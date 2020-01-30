@@ -1,0 +1,2 @@
+rm .Status_*
+rm .debug_history.log

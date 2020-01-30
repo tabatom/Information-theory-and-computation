@@ -1,5 +1,5 @@
 	PROGRAM Ex7
-	! Program that study random hermitian matrices
+	! Program that helps studying the development of a wave function
 	! Variables are:
 	! Hamilt	:	hamiltonian matrix
 	! L_interv	:	the interval is [-L_interv, L_interv]
@@ -32,8 +32,6 @@
 	USE, INTRINSIC :: iso_c_binding 
 	INCLUDE 'fftw3.f03'
 
-
-	REAL*8, DIMENSION(:,:), ALLOCATABLE :: Hamilt
 	REAL*8 :: L_interv, h_spac, T_tot, delta_t, max_p, max_Vx
 	REAL*8, DIMENSION(:), ALLOCATABLE :: x_pos, p_moments
 	COMPLEX*16, DIMENSION(:,:), ALLOCATABLE :: psi0_eval, psi0_eval_t

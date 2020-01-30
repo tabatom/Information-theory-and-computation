@@ -1,5 +1,5 @@
 	PROGRAM Ex6
-	! Program that study random hermitian matrices
+	! Program that help in studying the unidimensional quantum harmonic oscillator
 	! Variables are:
 	! Hamilt	:	hamiltonian matrix
 	! L_interv	:	the interval is [-L_interv, L_interv]

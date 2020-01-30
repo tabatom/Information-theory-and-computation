@@ -1,6 +1,6 @@
 set palette defined (0 '#0000ff',  1 '#dd7700')
 set cbrange [0:100]
-set cbtics font ",5"
+set cbtics font ",10"
 set cblabel "Time steps"
 
 set tics font ",20"
